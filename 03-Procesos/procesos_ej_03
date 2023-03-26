@@ -1,0 +1,11 @@
+alumno@alumno:~/Escritorio/03-procesos$ gcc -o proc_03 proc_03.c
+alumno@alumno:~/Escritorio/03-procesos$ ./proc_03
+Mi pid es 3611 y el pid de papa es 3588
+Mi pid es 3612 y el pid de papa es 3611
+Mi pid es 3614 y el pid de papa es 3612
+Mi pid es 3613 y el pid de papa es 3611
+# otra terminal
+           │               ├─gnome-terminal-(2110)─┬─bash(2119)───pstree(3617)
+           │               │                       ├─bash(3588)───proc_03(3611)+++
+
+

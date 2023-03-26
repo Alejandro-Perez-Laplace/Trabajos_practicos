@@ -1,0 +1,5 @@
+alumno@alumno:~/Escritorio/03-procesos$ gcc -o proc_01 proc_01.c
+alumno@alumno:~/Escritorio/03-procesos$ ./proc_01
+Mi pid es 3186 y el pid de papa es 2119
+alumno@alumno:~/Escritorio/03-procesos$ 
+

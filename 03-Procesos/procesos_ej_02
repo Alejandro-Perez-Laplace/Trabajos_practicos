@@ -1,0 +1,14 @@
+alumno@alumno:~/Escritorio/03-procesos$ gcc -o proc_02 proc_02.c
+alumno@alumno:~/Escritorio/03-procesos$ ./proc_02
+Mi pid es 3484 y el pid de papa es 2119. fork() devolvio 3485
+Mi pid es 3485 y el pid de papa es 3484. fork() devolvio 0
+
+# otra consola
+
+│                       └─{gnome-shell-cal}(1820)
+           │               ├─gnome-terminal-(2110)─┬─bash(2119)───proc_02(3537)───proc_02(3538)
+           │               │                       ├─bash(3316)───pstree(3539)
+           │               │                       ├─{gnome-terminal-}(2111)
+           │               │                       ├─{gnome-terminal-}(2112)
+           │               │                       └─{gnome-terminal-}(2113)
+
