@@ -59,11 +59,14 @@ if __name__ == '__main__':
     while True:
         try:
             distance = parent_conn.recv()
-            print(f"Distancia: {distance:.2f} km")
+            print(f"Distancia: {distance:.4f} km")
         except EOFError:
             break
 
     total_distance = parent_conn.recv()
-    print(f"Distancia total recorrida: {total_distance:.2f} km")
-
+    print(f"Distancia total recorrida: {total_distance:.4f} km")
+    
+    pid = os.getpid()
+    os.kill(pid, signal.SIGKILL)
+    
     p.join()
