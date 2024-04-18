@@ -1,0 +1,2 @@
+El programa no contempla la posibilidad de que no se escriba en los procesos hijos.
+Se presenta una aleatoriedad respecto de que procesos hijo realiza la escritura en la pipe. Hay resultados distintos dependiendo del momento. El sistema no garantiza la secuencia del acceso de los procesos a la pipe.
