@@ -1,0 +1,1 @@
+El programa por el proveso hijo resta 1 a la variable x y el proceso padre suma 1, pero se muestran distintos valores por pantalla. Esto se debe a que no estan sincronizados los accesos a la variable y se hace en paralelo los procesos.
