@@ -1,0 +1,1 @@
+En este ejercicio se cerraba la pipe de lectura desde el proceso padre ipc[0] despues de crearse, el hijo trataba de escribir el esa pipe y saltaba el error el el proceso hijo
