@@ -19,15 +19,15 @@ int numero;
 
 	numero= *(int*)nro;
 	
-	s=pthread_mutex_lock(&mtx); 
+	s=pthread_mutex_lock(&mtx); //Bloqueo del Mutex: El hilo intenta bloquear el mutex mtx para asegurar el acceso exclusivo a la variable total.
    	if (s!=0){
       printf("ERROR; pthread_mutex() = %d\n", s);
       exit(-1);   }
 
-   	total=total+numero;
+   	total=total+numero;//Operación Segura: Imprime el valor de total, lo modifica sumando numero y lo imprime nuevamente.
    	printf("Hilo 0, recibe nro=%d, total= %d\n",numero, total);
 
-   	s=pthread_mutex_unlock(&mtx); 
+   	s=pthread_mutex_unlock(&mtx); //Desbloqueo del Mutex: Libera el mutex para que otros hilos puedan acceder a la variable total.
    	if (s!=0){
       printf("ERROR; pthread_mutex() = %d\n", s);
       exit(-1);    }
@@ -49,9 +49,9 @@ int rc ;
  
 	printf("Main crea a hilo 0\n");
     
-	rc = pthread_create(&hilo, NULL, HILO0 , (void *)&t  ); 
+	rc = pthread_create(&hilo, NULL, HILO0 , (void *)&t  ); //Creación del Hilo: El hilo HILO0 se crea y se le pasa el valor de t como parámetro.
 	if (rc){
-       printf("ERROR; pthread_create() = %d\n", rc);
+       printf("ERROR; pthread_create() = %d\n", rc);//Bloqueo del Mutex: El hilo intenta bloquear el mutex mtx para asegurar el acceso exclusivo a la variable total.
        exit(-1);    }
 
 	s=pthread_mutex_lock(&mtx);  
@@ -61,7 +61,7 @@ int rc ;
 
 	total=total+t;
 
-	s=pthread_mutex_unlock(&mtx); 
+	s=pthread_mutex_unlock(&mtx);  //Desbloqueo del Mutex: Libera el mutex para que otros hilos puedan acceder a la variable total.
 	if (s!=0){
       printf("ERROR; pthread_mutex() = %d\n", s);
       exit(-1);    }
