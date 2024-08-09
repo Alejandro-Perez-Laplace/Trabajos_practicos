@@ -49,7 +49,7 @@ int main() {
 
    printf("Espera a que termine hilo\n");
 
-   pthread_join(hilo[0],NULL);
+   pthread_join(hilo[0],NULL);// esperar a que un hilo específico termine su ejecución. El hilo que lo invoca (normalmente el hilo principal o "main thread") se bloquea hasta que el hilo especificado en el argumento haya terminado.
 
    printf("Termina hilo main\n");
 
